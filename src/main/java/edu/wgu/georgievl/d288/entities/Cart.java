@@ -9,23 +9,28 @@ import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
+@Table(name = "carts")
 @Getter
 @Setter
 public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cart_id")
     private Long id;
 
     private String orderTrackingNumber;
     private BigDecimal packagePrice;
     private int partySize;
+
+//    @Convert(converter = StatusTypeConverter.class)
+    @Enumerated(EnumType.STRING)
     private StatusType status;
     private LocalDate createDate;
     private LocalDate lastUpdate;
 
     @ManyToOne
-    @JoinColumn(name = "cart_id")
+    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     @OneToMany(mappedBy = "cart")

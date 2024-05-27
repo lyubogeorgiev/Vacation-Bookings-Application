@@ -10,11 +10,14 @@ import java.util.Set;
 @Entity
 @Setter
 @Getter
+@Table(name = "divisions")
 public class Division {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long divisionId;
+
+    @Column(name = "division")
     private String divisionName;
     private LocalDate createDate;
     private LocalDate lastUpdate;
@@ -24,7 +27,7 @@ public class Division {
     @JoinColumn(name = "country_id")
     private Country country;
 
-    private Long countryID;
+//    private Long countryId;
 
     @OneToMany(mappedBy = "division")
     private Set<Customer> customers;

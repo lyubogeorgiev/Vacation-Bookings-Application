@@ -11,11 +11,14 @@ import java.util.Set;
 @Entity
 @Getter
 @Setter
+@Table(name = "countries")
 public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long countryId;
+
+    @Column(name = "country")
     private String countryName;
     private LocalDate createDate;
     private LocalDate lastUpdate;
