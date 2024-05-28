@@ -20,18 +20,18 @@ public class CartItem {
     @Column(name = "cart_item_id")
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "vacation_id")
     private Vacation vacation;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
         name = "excursion_cartitem",
-        joinColumns = @JoinColumn(name = "excursion_id"),
-        inverseJoinColumns = @JoinColumn(name = "cart_item_id")
+        joinColumns = @JoinColumn(name = "cart_item_id"),
+        inverseJoinColumns = @JoinColumn(name = "excursion_id")
     )
     private Set<Excursion> excursions;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
