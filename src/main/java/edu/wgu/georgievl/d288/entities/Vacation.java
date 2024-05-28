@@ -18,7 +18,7 @@ public class Vacation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vacation_id")
-    private Long id;
+    private Long vacationId;
 
     private String vacationTitle;
     private String description;

@@ -5,7 +5,7 @@ import edu.wgu.georgievl.d288.services.Purchase;
 import edu.wgu.georgievl.d288.services.PurchaseResponse;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin("*")
+@CrossOrigin
 @RestController
 @RequestMapping("/api/checkout")
 public class CheckoutController {
