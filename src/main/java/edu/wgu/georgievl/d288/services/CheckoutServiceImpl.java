@@ -5,10 +5,12 @@ import edu.wgu.georgievl.d288.entities.Cart;
 import edu.wgu.georgievl.d288.entities.CartItem;
 import edu.wgu.georgievl.d288.entities.Customer;
 import jakarta.transaction.Transactional;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.UUID;
 
+@Service
 public class CheckoutServiceImpl implements CheckoutService {
 
     private final CustomerRepository customerRepository;

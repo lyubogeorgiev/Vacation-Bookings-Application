@@ -58,4 +58,12 @@ public class Customer {
 
     public Customer() {
     }
+
+    public Customer(String firstName, String lastName, String address, String postalCode, String phone) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.postalCode = postalCode;
+        this.phone = phone;
+    }
 }
