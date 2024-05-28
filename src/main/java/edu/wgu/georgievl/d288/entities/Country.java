@@ -18,16 +18,17 @@ public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long countryId;
+    @Column(name = "country_id")
+    private Long id;
 
     @Column(name = "country")
-    private String countryName;
+    private String country_name;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
     private Set<Division> divisions;

@@ -38,16 +38,16 @@ public class Customer {
 
     @NotBlank(message = "Postal code can't be blank")
     @Size(min = 5, max = 5, message = "Postal code has to be 5 symbols long")
-    private String postalCode;
+    private String postal_code;
 
     @NotBlank(message = "Phone Number can't be blank")
     private String phone;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     @ManyToOne
     @JoinColumn(name = "division_id")
@@ -63,7 +63,7 @@ public class Customer {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
-        this.postalCode = postalCode;
+        this.postal_code = postalCode;
         this.phone = phone;
     }
 }

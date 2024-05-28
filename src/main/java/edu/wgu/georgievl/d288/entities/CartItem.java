@@ -36,10 +36,10 @@ public class CartItem {
     private Cart cart;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     public CartItem() {
     }

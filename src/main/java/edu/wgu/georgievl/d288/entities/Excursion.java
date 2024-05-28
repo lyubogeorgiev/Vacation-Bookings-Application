@@ -20,15 +20,15 @@ public class Excursion {
     @Column(name = "excursion_id")
     private Long id;
 
-    private String excursionTitle;
-    private BigDecimal excursionPrice;
-    private String imageUrl;
+    private String excursion_title;
+    private BigDecimal excursion_price;
+    private String image_URL;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     @ManyToOne
     @JoinColumn(name = "vacation_id")

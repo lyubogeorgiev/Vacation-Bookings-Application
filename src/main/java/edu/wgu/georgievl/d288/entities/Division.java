@@ -17,23 +17,24 @@ public class Division {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long divisionId;
+    @Column(name = "division_id")
+    private Long id;
 
     @Column(name = "division")
-    private String divisionName;
+    private String division_name;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     @Setter
     @ManyToOne
     @JoinColumn(name = "country_id")
     private Country country;
 
-//    private Long countryId;
+//    private Long country_id;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
     private Set<Customer> customers;

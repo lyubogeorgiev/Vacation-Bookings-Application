@@ -20,18 +20,18 @@ public class Vacation {
     @Column(name = "vacation_id")
     private Long vacationId;
 
-    private String vacationTitle;
+    private String vacation_title;
     private String description;
 
     @Column(name = "travel_fare_price")
-    private BigDecimal travelPrice;
-    private String imageUrl;
+    private BigDecimal travel_price;
+    private String image_URL;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "vacation")
     private Set<Excursion> excursions;

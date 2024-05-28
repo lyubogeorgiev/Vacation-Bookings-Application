@@ -22,18 +22,18 @@ public class Cart {
     private Long id;
 
     private String orderTrackingNumber;
-    private BigDecimal packagePrice;
-    private int partySize;
+    private BigDecimal package_price;
+    private int party_size;
 
 //    @Convert(converter = StatusTypeConverter.class)
     @Enumerated(EnumType.STRING)
     private StatusType status;
 
     @CreationTimestamp
-    private LocalDate createDate;
+    private LocalDate create_date;
 
     @UpdateTimestamp
-    private LocalDate lastUpdate;
+    private LocalDate last_update;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
