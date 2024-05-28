@@ -3,6 +3,8 @@ package edu.wgu.georgievl.d288.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -21,7 +23,11 @@ public class Excursion {
     private String excursionTitle;
     private BigDecimal excursionPrice;
     private String imageUrl;
+
+    @CreationTimestamp
     private LocalDate createDate;
+
+    @UpdateTimestamp
     private LocalDate lastUpdate;
 
     @ManyToOne

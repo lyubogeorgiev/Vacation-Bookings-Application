@@ -3,6 +3,8 @@ package edu.wgu.georgievl.d288.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -32,7 +34,11 @@ public class CartItem {
     @ManyToOne
     @JoinColumn(name = "cart_id")
     private Cart cart;
+
+    @CreationTimestamp
     private LocalDate createDate;
+
+    @UpdateTimestamp
     private LocalDate lastUpdate;
 
     public CartItem() {

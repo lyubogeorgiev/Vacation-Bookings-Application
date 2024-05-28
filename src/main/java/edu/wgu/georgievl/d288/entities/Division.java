@@ -3,6 +3,8 @@ package edu.wgu.georgievl.d288.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -19,7 +21,11 @@ public class Division {
 
     @Column(name = "division")
     private String divisionName;
+
+    @CreationTimestamp
     private LocalDate createDate;
+
+    @UpdateTimestamp
     private LocalDate lastUpdate;
 
     @Setter
@@ -29,7 +35,7 @@ public class Division {
 
 //    private Long countryId;
 
-    @OneToMany(mappedBy = "division")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "division")
     private Set<Customer> customers;
 
     public Division() {

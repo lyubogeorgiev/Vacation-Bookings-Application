@@ -3,6 +3,8 @@ package edu.wgu.georgievl.d288.entities;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.math.BigInteger;
 import java.time.LocalDate;
@@ -20,10 +22,14 @@ public class Country {
 
     @Column(name = "country")
     private String countryName;
+
+    @CreationTimestamp
     private LocalDate createDate;
+
+    @UpdateTimestamp
     private LocalDate lastUpdate;
 
-    @OneToMany(mappedBy = "country")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "country")
     private Set<Division> divisions;
 
     public Country() {
