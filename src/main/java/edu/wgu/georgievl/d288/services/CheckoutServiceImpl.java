@@ -54,10 +54,6 @@ public class CheckoutServiceImpl implements CheckoutService {
                 excursion.getCartItems().add(item);
             });
         });
-//        cartItems.forEach(item -> cart.getCartItems().add(item));
-//
-//        Customer customer = purchase.getCart().getCustomer();
-//        customer.getCarts().add(cart);
 
         cartRepository.save(cart);
 
