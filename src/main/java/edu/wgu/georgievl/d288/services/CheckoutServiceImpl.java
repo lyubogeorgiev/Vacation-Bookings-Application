@@ -5,6 +5,7 @@ import edu.wgu.georgievl.d288.dao.CustomerRepository;
 import edu.wgu.georgievl.d288.entities.Cart;
 import edu.wgu.georgievl.d288.entities.CartItem;
 import edu.wgu.georgievl.d288.entities.Customer;
+import edu.wgu.georgievl.d288.entities.StatusType;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
@@ -28,9 +29,11 @@ public class CheckoutServiceImpl implements CheckoutService {
         System.out.println(purchase.getCart().getId());
         System.out.println(purchase.getCart().getStatus());
         System.out.println(purchase.getCart().getCustomer().getFirstName());
-//        System.out.println("Cart items: ");
-//        purchase.getCart().getCartItems().forEach(System.out::println);
         System.out.println(purchase.toString());
+
+        purchase.getCart().setStatus(StatusType.ordered);
+
+        System.out.println(purchase.getCart().getStatus());
 
         System.out.println(purchase.getCartItems().size());
         System.out.println(purchase.getCartItems());
